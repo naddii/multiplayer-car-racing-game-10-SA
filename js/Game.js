@@ -43,6 +43,7 @@ class Game {
     fuels = new Group();
     powerCoins = new Group();
     obstacle1 = new Group(); 
+    obstacle2 = new Group();
     var obstacle1Positions = [
       { x: width / 2 - 150, y: height - 1300, image: obstacle1Image },
       { x: width / 2 + 250, y: height - 1800, image: obstacle1Image },
@@ -51,7 +52,14 @@ class Game {
       { x: width / 2 - 150, y: height - 4300, image: obstacle1Image },
       { x: width / 2, y: height - 5300, image: obstacle1Image },
     ];
-
+ var obstacle2Positions = [
+      { x: width / 2 - 500, y: height - 4999, image: obstacle1Image },
+      { x: width / 2 + 444, y: height - 3333, image: obstacle1Image },
+      { x: width / 2 - 333, y: height - 4444, image: obstacle1Image },
+     
+      { x: width / 2 - 250, y: height - 1526, image: obstacle1Image },
+      { x: width / 2, y: height - 444, image: obstacle1Image },
+    ];
   
     // Adding fuel sprite in the game
     this.addSprites(fuels, 4, fuelImage, 0.02);
@@ -65,8 +73,13 @@ class Game {
       0.04,
       obstacle1Positions
     );
-    
-  }
+    this.addSprites(
+      obstacle2,
+      obstacle2Positions.length,
+      obstacle2Image,
+      0.04,
+      obstacle2Positions
+    );  }
 
   // C38 TA
   addSprites(spriteGroup, numberOfSprites, spriteImage, scale, positions = []) {
